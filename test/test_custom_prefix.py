@@ -34,10 +34,13 @@ def test_collect_custom_prefix(testdir):
 
     result = testdir.runpytest('--collectonly')
     print(result.outlines)
-    assert _collect_result(result) == [
+    outlines = [line for line in result.outlines]
+    expected_lines = [
         "collected 1 item",
-        "<Module 'a_dir/test_a.py'>",
-        "  <DescribeBlock 'foo_scope'>",
-        "    <DescribeBlock 'bar_context'>",
-        "      <Function 'passes'>",
+        "  <Module 'test_a.py'>",
+        "    <DescribeBlock 'foo_scope'>",
+        "      <DescribeBlock 'bar_context'>",
+        "        <Function 'passes'>",
     ]
+    for line in expected_lines:
+        assert line in outlines
