@@ -1,18 +1,10 @@
 language: python
 python: 2.7
 env:
-  - TOX_ENV=py27-pytest27
-  - TOX_ENV=py27-pytest28
-  - TOX_ENV=py27-pytest32
-  - TOX_ENV=py27-pytest33
-  - TOX_ENV=py34-pytest27
-  - TOX_ENV=py34-pytest28
-  - TOX_ENV=py34-pytest32
-  - TOX_ENV=py34-pytest33
-  # - TOX_ENV=py35-pytest27
-  # - TOX_ENV=py35-pytest28
-  # - TOX_ENV=py35-pytest32
-  # - TOX_ENV=py35-pytest33
+  - TOX_ENV=py34-pytest38
+  - TOX_ENV=py35-pytest38
+  - TOX_ENV=py36-pytest38
+  - TOX_ENV=py37-pytest38
 install:
   - pip install tox
 script:
